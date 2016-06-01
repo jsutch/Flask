@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   	  <meta charset="UTF-8">
+      <title>Ninja Gold</title>
+      <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/ninja.css')}}">
+   </head>
+   <body>
+	   <div id="gold_counter">
+	   		{%if not session['gold'] %}
+	   		<h2>Your Gold: 0</h2>
+	   		{%else%}
+	   		<h2>Your Gold: {{session['gold']}}</h2>
+	   		{%endif%}
+	   </div>
+
+	   <div id="locations">
+		   <div class="places">
+		   		<h3>Farm</h3>
+		   		<h4>Earns 10-20 golds</h4>
+		   		<form action="/process" method="post">
+		   		<input type="hidden" name="location" value="farm">
+			    <input type="submit" value="Find Gold!">
+			</form>
+		   </div>
+
+		   <div class="places">
+		   		<h3>Cave</h3>
+		   		<h4>Earns 5-10 golds</h4>
+		   		<form action="/process" method="post">
+		   		<input type="hidden" name="location" value="cave">
+			    <input type="submit" value="Find Gold!">
+				</form>
+		   </div>
+		   
+		 	<div class="places">
+		 		<h3>House</h3>
+		 		<h4>Earns 2-5 golds</h4>
+				<form action="/process" method="post">
+				<input type="hidden" name="location" value="house">
+			    <input type="submit" value="Find Gold!">
+				</form>
+		   </div>
+
+			<div class="places">
+				<h3>Casino!</h3>
+				<h4>Earns/Takes 0-50 golds</h4>
+				<form action="/process" method="post">
+				<input type="hidden" name="location" value="casino">
+				<input type="submit" value="Find Gold!">
+				</form>
+			</div>	
+		</div>
+		<div id="label">
+		 	<h3>Activity</h3>
+		</div> 	
+	   <div id="log">
+	   		<p> Put A Log Entry Here </p>
+	   </div>
+   </body>
+</html>   
+

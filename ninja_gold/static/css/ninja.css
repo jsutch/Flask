@@ -1,0 +1,43 @@
+#gold_counter
+{
+	border: solid yellow 1px;
+	display: block;
+	width: 100%;
+	float: left;
+	margin: 2px 50px;
+}
+#locations 
+{
+	width: auto;
+	border: solid black 1px;
+	display: block;
+	margin: 2px 50px;
+}
+.places
+{
+	height: 200px;
+	width: 200px;
+	border: solid red 1px;
+	display: inline-block;
+	text-align: center;
+	margin: 10px 50px;
+}
+#label
+{
+	display: block;
+	margin: 2px 50px;
+}
+#log
+{
+	height: 200px;
+	color: green;
+	width: auto;
+	border: solid black 1px;
+	display: block;
+	overflow: auto;
+	margin: 2px 50px;
+}
+.red
+{
+	color: red;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Great Number Game Python</title>
+	    	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/numbergame.css')}}">
+	</head>
+
+	<body>
+		<div id='welcome'>
+		   	<h1> Welcome to the Great Number Game</h1>
+		   	<h2> I'm thinking of a number between 1 and 100</h2>
+		   	<h2>Take a Guess!</h2>
+		   	{% if session['theNumber'] is defined %}
+		   	<h2> The Number Is  {{session['theNumber']}}</h2>
+		   	{% else %}
+		   	<h2> the Number isn't defined</h2>
+		   	{% endif %}
+		    {% if session['answer'] is defined %}
+		   	<h2> The Answer was  {{session['answer']}}</h2>
+		   	{% else %}
+		   	<h2> Answer is not defined</h2>
+		   	{% endif %}
+		   	{% if session['test'] is defined %}
+		   	<h2> Your Guess was  {{session['test']}}</h2>
+		   	{% else %}
+		   	<h2> Your Guess is not defined</h2>
+		   	{% endif %}
+		</div>
+		<div id='answer'>
+			{% if not session['answer'] %}
+			<span class="notset"></span>
+			{% elif session['answer'] == 'justright'%}			
+			<span class="justright">
+				<h2> {{session['test']}} Was The Number! </h2>
+				<form action="/reset" method="post">
+					<input type="submit" value="Play Again!">
+				</form>
+			</span>			
+			{%elif session['answer'] == 'toohigh'%}
+			<span class="toohigh">
+				<h2> Too high! </h2>
+			</span>
+			{%elif session['answer'] == 'toolow'%}
+			<span class="toolow">
+				<h2> Too low! </h2>
+			</span>
+			{%endif%}
+	    </div>
+		<div id='form'>
+			<form action="/validate" method="post">
+			    <input type="text" name="yourguess">
+			    <input type="submit" value="submit">
+			</form>
+   		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+	  <title>Form Test Show</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/numbergame.css')}}">
+    </head>
+    <body>
+    	<div id='welcome'>
+			<h1>The User Is:</h1>
+			{% if session['name'] == 'bob' %}
+			<h1> You're BOB!</h1>
+			{% else %}
+			<h3>The Name variable is {{name}}</h3>
+			<h3>The Session Name variable is {{session['name']}}</h3>
+			<h3>The Email variable is {{email}}</h3>
+			<h3>The Session Email variable is {{session['email']}}</h3>
+			{% endif %}
+		</div>
+    </body>
+</html>

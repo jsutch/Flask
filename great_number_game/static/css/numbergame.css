@@ -1,0 +1,39 @@
+#welcome, #form, #answer
+{
+	text-align: center;
+	margin-top: 5px;
+      border: 1px dotted green;
+      background-color: orange;
+}
+#answer 
+{
+	background-color: transparent;
+	margin: 0px 42%;
+}
+.notset 
+{
+	height: 5px;
+	width: 120px;
+	background-color: transparent;
+}
+.justright, .toohigh, .toolow
+{
+	height: 120px;
+	width:120px;
+	display: block;
+	text-align: center;	
+	padding: 30px;
+
+}
+.justright
+{
+	background-color: green;
+}
+.toohigh
+{
+	background-color: red;
+}
+.toolow
+{
+	background-color: pink;
+}
