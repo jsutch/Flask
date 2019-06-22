@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve registration_form
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/web/Flask/registration_form
+Environment="PATH=/web/Flask/registration_form"
+ExecStart=/usr/local/bin/gunicorn --workers 3 --bind unix:registration_form.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
