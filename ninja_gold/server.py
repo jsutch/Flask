@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect
+rom flask import Flask, render_template, request, session, redirect
 import random
 
 app = Flask(__name__)
@@ -42,4 +42,4 @@ def reset():
 
 
 if __name__ == "__main__":
-	app.run(debug=True)	
+app.run(debug=True) 
