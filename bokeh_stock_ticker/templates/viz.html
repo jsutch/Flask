@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+        <link rel="stylesheet" href={{cdn_css | safe}} type="text/css" />          
+        <script type="text/javascript" src={{cdn_js | safe}}></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+<div class="viz">
+    <h1>Apple Chart Candlestick</h1>
+    <p>Apple chart using Bokeh</p>
+</div>
+    {{script1|safe}}
+    {{div1 | safe}}
+{% endblock %}
