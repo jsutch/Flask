@@ -110,4 +110,5 @@ def validate_birthdate(form):
 # Run loop:
 # debug should be set to false on the open net
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8888,debug=False)
+    app.run(debug=False)
+    #app.run(host='0.0.0.0', port=8888,debug=False)

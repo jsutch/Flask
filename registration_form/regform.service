@@ -6,8 +6,8 @@ After=network.target
 User=www-data
 Group=www-data
 WorkingDirectory=/web/Flask/registration_form
-Environment="PATH=/web/Flask/registration_form"
-ExecStart=/usr/local/bin/gunicorn --workers 3 --bind unix:registration_form.sock -m 007 wsgi:app
+Environment=PATH=/web/Flask/registration_form
+ExecStart=/usr/local/bin/gunicorn --chdir /web/Flask/registration_form/ --workers 3 --bind=unix:registration_form.sock -m 007 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
