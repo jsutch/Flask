@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn instance to serve bokeh_stock_ticker
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/web/Flask/bokeh_stock_ticker
+Environment=PATH=/web/Flask/bokeh_stock_ticker
+#ExecStart=/usr/local/bin/gunicorn --chdir ${WorkingDirectory} --workers 3 --bind=unix:bokeh_stock_ticker.sock -m 007 wsgi:app
+ExecStart=/usr/local/bin/gunicorn --chdir /web/Flask/bokeh_stock_ticker --workers 3 --bind=unix:bokeh_stock_ticker.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
